@@ -62,7 +62,7 @@ if __name__ == "__main__":
     # 1- Função para buscar categorias
     # 2- aceitar parametros: numero de threads, arquivo de destino
     print("iniciando drivers e criando threads...")
-    drivers =1
+    drivers = 4
     pool = ThreadPool(drivers)
     drivers_list = make_n_drivers(drivers)
     categorys = get_categorys("https://www.epocacosmeticos.com.br/", drivers_list[0])
