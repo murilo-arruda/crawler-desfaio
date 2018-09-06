@@ -2,9 +2,9 @@ from selenium.webdriver.firefox.options import Options
 from multiprocessing.dummy import Pool as ThreadPool
 from selenium.webdriver import Firefox
 from bs4 import BeautifulSoup
+import platform
 import time
 import csv
-
 
 def get_categorys(url, driver):
     # procura por categorias de produtos a partir da url
@@ -41,6 +41,9 @@ def make_n_drivers(n):
     options = Options()
     options.add_argument('-headless')
     drivers_list = []
+    path = "./geckodriver"
+    if platform.system() == "Windows":
+        path = path + ".exe"
     for _ in range(0,n):
         drivers_list.append(Firefox(executable_path=r"./geckodriver.exe", options=options))
     return drivers_list
@@ -58,9 +61,6 @@ def close_drivers(drivers_list):
         driver.quit()
 
 if __name__ == "__main__":
-    # TODO:
-    # 1- Função para buscar categorias
-    # 2- aceitar parametros: numero de threads, arquivo de destino
     print("iniciando drivers e criando threads...")
     drivers = 4
     pool = ThreadPool(drivers)
