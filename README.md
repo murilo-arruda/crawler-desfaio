@@ -10,18 +10,21 @@ Python 3.6+ recomendado
 
 2.1 *(opcional)* - crie um [ambiente virtual](https://docs.python.org/3/library/venv.html)
 
-2- pip install
+2-
+ ```
+pip  install -r requiriments.txt
+```
 
-3- Baixe o [Geckodriver (v0.21.0)](https://github.com/mozilla/geckodriver/releases) de acordo com o seu Sistema Operacional
+3- Baixe o driver [Geckodriver (v0.21.0)](https://github.com/mozilla/geckodriver/releases) de acordo com o seu Sistema Operacional
 
-4- Extraia o driver para a pasta do repositório (ex: windows = geckodriver.exe)
+4- Extraia o driver para a pasta do repositório
 
 ## Testes
 
 * para realizar os testes e verificar se o Geckodriver está funcionando:
 
 ```
-python teste.py
+python crawler_test.py -v
 ```
 ## Uso
 ```
