@@ -45,7 +45,7 @@ def make_n_drivers(n):
     if platform.system() == "Windows":
         path = path + ".exe"
     for _ in range(0,n):
-        drivers_list.append(Firefox(executable_path=r"./geckodriver.exe", options=options))
+        drivers_list.append(Firefox(executable_path=r"./geckodriver", options=options))
     return drivers_list
 
 def pooling(url):
